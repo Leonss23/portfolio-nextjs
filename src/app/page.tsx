@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <main className="home ">
-      <span>My annoyingly colorful portfolio</span>
       <section>
+        <span>My annoyingly colorful portfolio</span>
         <div>
           <h1>
             Leonardo
