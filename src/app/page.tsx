@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="home dark">
+    <main className="home ">
       <span>My annoyingly colorful portfolio</span>
       <section>
         <div>
