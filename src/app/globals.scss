@@ -1,8 +1,13 @@
+// Fonts
 @import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
 
+// Mixins
+@import "./styles/breakpoints";
+
+// Reset
 * {
   margin: 0;
   padding: 0;
@@ -12,52 +17,81 @@
   list-style: none;
 }
 
+// Main
+
 .home {
+  // Default (Light) Theme Variables
   --text-color: #000000;
   --bg-color: #ffffff;
   --primary: hsl(80, 90%, 45%);
   --secondary: hsl(16, 85%, 50%);
   --accent: hsl(300, 100%, 35%);
-  --bigfont: "Unica One", sans-serif;
+  --bigfont: "Unbounded", sans-serif;
   --font: "Quicksand", sans-serif;
   --font-weight: 900;
-  --text-shadow: var(--outline-doubled);
+  --text-shadow: var(--shadow-doubled);
+  --font-size-mult: 1;
 
-  --outline-doubled: min(0.4vw, 0.2rem) min(0.4vw, 0.2rem) 0 var(--secondary),
+  @include xs {
+    --font-size-mult: 1.5;
+  }
+  @include sm {
+    --font-size-mult: 2;
+  }
+  @include md {
+    --font-size-mult: 2.5;
+  }
+  @include lg {
+    --font-size-mult: 3;
+  }
+  @include xl {
+    --font-size-mult: 3.5;
+  }
+
+  // Shadow Variables
+  --shadow-doubled: min(0.4vw, 0.2rem) min(0.4vw, 0.2rem) 0 var(--secondary),
     min(-0.1vw, -0.2rem) min(-0.1vw, -0.2rem) 0 var(--primary);
 
-  --outline-black: 0 2px 0 var(--bg-color), 2px 0 0 var(--bg-color),
+  --shadow-black: 0 2px 0 var(--bg-color), 2px 0 0 var(--bg-color),
     0 -2px 0 var(--bg-color), -2px 0 0 var(--bg-color);
 
-  --outline-neon: 0.3rem 0.3rem 0.2rem var(--primary),
+  --shadow-neon: 0.3rem 0.3rem 0.2rem var(--primary),
     -0.3rem -0.3rem 0.2rem var(--secondary), 0.3rem 0.3rem 1.5rem var(--primary),
     -0.3rem -0.3rem 1.5rem var(--secondary);
 
-  text-shadow: var(--text-shadow);
-  background-color: var(--bg-color);
+  // Background
   min-height: 100vh;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--accent) 2px, transparent 0px);
+  background-size: 75px 75px;
 
+  // Layout
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  color: var(--text-color);
+  // Typography
+
   font-family: var(--font);
   font-weight: var(--font-weight);
-  letter-spacing: 0.35rem;
+  font-size: calc(0.4rem * var(--font-size-mult));
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
   line-height: 1;
 
-  background-image: radial-gradient(var(--accent) 2px, transparent 0px);
-  background-size: 75px 75px;
-
+  // Header text
   > span {
     margin: 0.5rem;
     position: absolute;
     text-shadow: none;
   }
+
+  // Selection Color
   ::selection {
     color: var(--accent);
   }
+
+  // Main Elements
 
   section {
     display: flex;
@@ -66,34 +100,40 @@
     min-height: 100vh;
 
     justify-content: space-evenly;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   h1 {
     text-transform: uppercase;
     font-family: var(--bigfont);
-    font-size: max(5rem, 8vw);
-    line-height: 0.75;
+    font-size: calc(1.5rem * var(--font-size-mult));
   }
 
   h2 {
-    font-size: max(1.5rem, 1.75vw);
-    margin-left: min(1rem, 2vw);
-  }
-
-  p {
-    font-size: max(1.25rem, 1.25vw);
+    font-size: calc(0.7rem * var(--font-size-mult));
+    margin-left: calc(0.2rem * var(--font-size-mult));
+    align-self: flex-start;
   }
 
   ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 5vw;
+    gap: calc(2rem * var(--font-size-mult));
     text-align: center;
+
+    p {
+      font-size: calc(0.6rem * var(--font-size-mult));
+    }
 
     svg {
       padding: 0.2rem;
-      width: max(4rem, 3.5vw);
+      width: calc(1.5rem * var(--font-size-mult));
       fill: var(--secondary);
       filter: drop-shadow(1px 0 0 var(--primary))
         drop-shadow(0 1px 0 var(--primary)) drop-shadow(0 -1px 0 var(--primary))
@@ -111,5 +151,5 @@
   --primary: hsl(300, 70%, 40%);
   --secondary: hsl(190, 90%, 50%);
   --accent: hsl(80, 90%, 50%);
-  --text-shadow: var(--outline-black), var(--outline-neon);
+  --text-shadow: var(--shadow-black), var(--shadow-neon);
 }
