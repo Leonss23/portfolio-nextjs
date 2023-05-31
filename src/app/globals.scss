@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: currentColor;
+  list-style: none;
+}
+
+.home {
+  --text-color: #000000;
+  --bg-color: #ffffff;
+  --primary: hsl(80, 90%, 45%);
+  --secondary: hsl(16, 85%, 50%);
+  --accent: hsl(300, 100%, 35%);
+  --bigfont: "Unica One", sans-serif;
+  --font: "Quicksand", sans-serif;
+  --font-weight: 900;
+  --text-shadow: var(--outline-doubled);
+
+  --outline-doubled: min(0.4vw, 0.2rem) min(0.4vw, 0.2rem) 0 var(--secondary),
+    min(-0.1vw, -0.2rem) min(-0.1vw, -0.2rem) 0 var(--primary);
+
+  --outline-black: 0 2px 0 var(--bg-color), 2px 0 0 var(--bg-color),
+    0 -2px 0 var(--bg-color), -2px 0 0 var(--bg-color);
+
+  --outline-neon: 0.3rem 0.3rem 0.2rem var(--primary),
+    -0.3rem -0.3rem 0.2rem var(--secondary), 0.3rem 0.3rem 1.5rem var(--primary),
+    -0.3rem -0.3rem 1.5rem var(--secondary);
+
+  text-shadow: var(--text-shadow);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--text-color);
+  font-family: var(--font);
+  font-weight: var(--font-weight);
+  letter-spacing: 0.35rem;
+  line-height: 1;
+
+  background-image: radial-gradient(var(--accent) 2px, transparent 0px);
+  background-size: 75px 75px;
+
+  > span {
+    margin: 0.5rem;
+    position: absolute;
+    text-shadow: none;
+  }
+  ::selection {
+    color: var(--accent);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+
+    justify-content: space-evenly;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-family: var(--bigfont);
+    font-size: max(5rem, 8vw);
+    line-height: 0.75;
+  }
+
+  h2 {
+    font-size: max(1.5rem, 1.75vw);
+    margin-left: min(1rem, 2vw);
+  }
+
+  p {
+    font-size: max(1.25rem, 1.25vw);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5vw;
+    text-align: center;
+
+    svg {
+      padding: 0.2rem;
+      width: max(4rem, 3.5vw);
+      fill: var(--secondary);
+      filter: drop-shadow(1px 0 0 var(--primary))
+        drop-shadow(0 1px 0 var(--primary)) drop-shadow(0 -1px 0 var(--primary))
+        drop-shadow(-1px 0 0 var(--primary));
+    }
+    :nth-child(3) {
+      stroke: var(--bg-color);
+    }
+  }
+}
+
+.dark {
+  --text-color: #ffffff;
+  --bg-color: #000000;
+  --primary: hsl(300, 70%, 40%);
+  --secondary: hsl(190, 90%, 50%);
+  --accent: hsl(80, 90%, 50%);
+  --text-shadow: var(--outline-black), var(--outline-neon);
+}
