@@ -26,26 +26,26 @@
   --primary: hsl(80, 90%, 45%);
   --secondary: hsl(16, 85%, 50%);
   --accent: hsl(300, 100%, 35%);
-  --bigfont: "Unbounded", sans-serif;
+  --bigfont: "Unica One", sans-serif;
   --font: "Quicksand", sans-serif;
   --font-weight: 900;
   --text-shadow: var(--shadow-doubled);
-  --font-size-mult: 1;
+  --font-size-mult: 1.2;
 
   @include xs {
-    --font-size-mult: 1.5;
+    --font-size-mult: 1.75;
   }
   @include sm {
-    --font-size-mult: 2;
-  }
-  @include md {
     --font-size-mult: 2.5;
   }
-  @include lg {
+  @include md {
     --font-size-mult: 3;
   }
-  @include xl {
+  @include lg {
     --font-size-mult: 3.5;
+  }
+  @include xl {
+    --font-size-mult: 4;
   }
 
   // Shadow Variables
@@ -96,16 +96,9 @@
   section {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    min-height: 100vh;
-
     justify-content: space-evenly;
-
-    > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    align-items: center;
+    min-height: 100vh;
   }
 
   h1 {
@@ -117,7 +110,6 @@
   h2 {
     font-size: calc(0.7rem * var(--font-size-mult));
     margin-left: calc(0.2rem * var(--font-size-mult));
-    align-self: flex-start;
   }
 
   ul {
@@ -133,7 +125,7 @@
 
     svg {
       padding: 0.2rem;
-      width: calc(1.5rem * var(--font-size-mult));
+      width: calc(1.2rem * var(--font-size-mult));
       fill: var(--secondary);
       filter: drop-shadow(1px 0 0 var(--primary))
         drop-shadow(0 1px 0 var(--primary)) drop-shadow(0 -1px 0 var(--primary))
