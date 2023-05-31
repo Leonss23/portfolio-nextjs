@@ -6,6 +6,7 @@
 
 // Mixins
 @import "./styles/breakpoints";
+@import "./styles/dark";
 
 // Reset
 * {
@@ -46,6 +47,9 @@
   }
   @include xl {
     --font-size-mult: 4;
+  }
+  @media (prefers-color-scheme: dark) {
+    @include dark;
   }
 
   // Shadow Variables
@@ -139,10 +143,5 @@
 }
 
 .dark {
-  --text-color: #ffffff;
-  --bg-color: #000000;
-  --primary: hsl(300, 70%, 40%);
-  --secondary: hsl(190, 90%, 50%);
-  --accent: hsl(80, 90%, 50%);
-  --text-shadow: var(--shadow-black), var(--shadow-neon);
+  @include dark;
 }
