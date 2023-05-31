@@ -60,7 +60,7 @@
     -0.3rem -0.3rem 1.5rem var(--secondary);
 
   // Background
-  min-height: 100vh;
+  min-height: 100svh;
   background-color: var(--bg-color);
   background-image: radial-gradient(var(--accent) 2px, transparent 0px);
   background-size: 75px 75px;
@@ -91,7 +91,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    min-height: 100dvh;
+    min-height: 100svh;
 
     // Header text
     > span {
