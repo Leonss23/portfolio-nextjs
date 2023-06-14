@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="home ">
       <section>
-        <span>My annoyingly colorful portfolio</span>
+        <span>My annoyingly colorful website</span>
         <div>
           <h1>
             Leonardo
