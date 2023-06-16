@@ -68,15 +68,6 @@
   background-color: var(--bg-color);
   background-image: radial-gradient(var(--accent) 2px, transparent 0px);
   background-size: 68px 68px;
-  
-  > section:nth-of-type(1) {
-    background-image: url("/nnneon.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: center;
-    background-position-y: center;
-    // background-color: red;
-  }
 
   // Layout
   display: flex;

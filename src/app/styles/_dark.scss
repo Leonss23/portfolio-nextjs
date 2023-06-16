@@ -5,5 +5,12 @@
   --secondary: hsl(190, 90%, 50%);
   --accent: hsl(80, 90%, 50%);
   --text-shadow: var(--shadow-black), var(--shadow-neon);
-}
 
+  > section:nth-of-type(1) {
+    background-image: url("/nnneon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+  }
+}
