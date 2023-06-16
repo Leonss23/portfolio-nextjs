@@ -33,6 +33,13 @@
   --text-shadow: var(--shadow-doubled);
   --font-size-mult: 1.2;
 
+  > section:nth-of-type(1) {
+    background-image: url("/ssscribble.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+  }
   @include xs {
     --font-size-mult: 1.75;
   }
