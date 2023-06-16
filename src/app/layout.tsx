@@ -1,18 +1,22 @@
-import './globals.scss'
+import "./globals.scss";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
-  title: 'Leonardo Gatti Portfolio',
-  description: 'Nextjs portfolio.',
-}
+  title: "Leonardo Gatti Portfolio",
+  description: "Nextjs portfolio.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
-  )
+  );
 }
