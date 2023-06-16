@@ -67,7 +67,16 @@
   min-height: 100svh;
   background-color: var(--bg-color);
   background-image: radial-gradient(var(--accent) 2px, transparent 0px);
-  background-size: 75px 75px;
+  background-size: 68px 68px;
+  
+  > section:nth-of-type(1) {
+    background-image: url("/nnneon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    // background-color: red;
+  }
 
   // Layout
   display: flex;
@@ -91,10 +100,12 @@
   // Main Elements
 
   section {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
     min-height: 100svh;
 
     // Header text
