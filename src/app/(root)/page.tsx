@@ -32,7 +32,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/leonss23/" target="_blank">
+              <a href="https://www.linkedin.com/in/leonardogattidev/" target="_blank">
                 <p>LinkedIn</p>
                 <svg
                   role="img"
@@ -45,7 +45,7 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <a href="/resume.pdf" target="_blank">
+              <a href="https://t.ly/KqKU7" target="_blank">
                 <p>Resume</p>
                 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
                   <path
